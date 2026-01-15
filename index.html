@@ -117,7 +117,8 @@
         orchestrationID: "1d334f6f5c4a402389b1001f50d6565d_47c38f8e-44f5-4baf-a53e-3034947b68eb",
         hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
         rootElementID: "root",
-        showLauncher: false,  // Show chat immediately without launcher button
+        showLauncher: false,  // Hide the launcher button
+        openChatByDefault: true,  // Open chat window automatically
         deploymentPlatform: "ibmcloud",
         crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/1d334f6f5c4a402389b1001f50d6565d:47c38f8e-44f5-4baf-a53e-3034947b68eb::",
         chatOptions: {
@@ -129,7 +130,8 @@
             form: 'float',  // Floating chat window
             width: '800px',  // Increased from 400px for better readability
             height: '700px', // Increased from 600px for more content
-            showOrchestrateHeader: true
+            showOrchestrateHeader: true,
+            isOpen: true  // Ensure chat opens by default
         },
         style: {
             headerColor: '#1e3c72',
