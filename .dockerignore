@@ -1,0 +1,10 @@
+# Ignore files not needed in the Docker image
+.git
+.gitignore
+*.md
+!README.md
+wxO-embed-chat-security-tool.sh
+server.pid
+node_modules
+.DS_Store
+*.log
