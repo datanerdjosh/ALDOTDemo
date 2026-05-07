@@ -1,36 +1,45 @@
-# Bank Employee Portal with IBM watsonx Orchestrate
+# SFBL Life Insurance Agent Assist Portal
 
-A professional banking employee portal website with an embedded IBM watsonx Orchestrate AI assistant.
+An intelligent agent assist portal for life insurance professionals, powered by IBM watsonx Orchestrate AI.
+
+## Overview
+
+The SFBL Agent Assist Portal is designed to support life insurance agents during client consultations by providing instant access to policy information, underwriting guidelines, and compliance requirements through an embedded AI assistant.
 
 ## Features
 
-- **Clean, Professional Design**: Modern banking interface with intuitive navigation
-- **Quick Action Cards**: Easy access to common banking tasks
-- **Embedded AI Assistant**: IBM watsonx Orchestrate chat widget for employee support
-- **Responsive Layout**: Works on desktop, tablet, and mobile devices
+- **Professional Agent Interface**: Clean, intuitive design optimized for agent workflows
+- **Quick Access Tools**: Fast navigation to client profiles, policy guidelines, and underwriting tools
+- **AI-Powered Agent Assist**: Real-time support during client consultations via IBM watsonx Orchestrate
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Secure Authentication**: Protected access for authorized agents only
 
 ## IBM watsonx Orchestrate Integration
 
-The portal includes an embedded AI assistant powered by IBM watsonx Orchestrate that can help employees with:
+The portal includes an embedded AI assistant that provides real-time support to agents during client consultations. The assistant can help with:
 
-- Customer account inquiries
-- Policy and procedure questions
-- System navigation assistance
-- Report generation guidance
+- **Policy Coverage Details**: Instant access to coverage options, exclusions, and policy terms
+- **Underwriting Guidelines**: Risk assessment criteria, approval requirements, and medical underwriting rules
+- **Premium Calculations**: Quote generation, discount eligibility, and rate factors
+- **Compliance Questions**: Regulatory requirements, disclosure obligations, and documentation needs
+- **Product Comparisons**: Side-by-side analysis of different policy options and recommendations
 
 ### Configuration
 
 The chat widget is configured with the following parameters:
 
-- **Orchestration ID**: `1d334f6f5c4a402389b1001f50d6565d_47c38f8e-44f5-4baf-a53e-3034947b68eb`
+- **Orchestration ID**: `93786cf852c24f1996c852ed6dbb3de4_73a624f5-40ec-4066-aec9-164dff7ad428`
 - **Host URL**: `https://us-south.watson-orchestrate.cloud.ibm.com`
-- **Agent ID**: `9f708ab0-4b49-4d2e-bfbb-eb3b4a79520a`
-- **Agent Environment ID**: `9aaf2025-519f-47b4-b2a9-1fd4fb14f477`
+- **Agent ID**: `208884f7-e996-4769-9b24-0af61a7dba68`
+- **Agent Environment ID**: `2d0911b2-8ea1-4650-8f74-a736763484ef`
 
 ## Files
 
-- `index.html` - Main HTML structure with embedded chat widget
-- `styles.css` - Professional styling for the banking portal
+- `index.html` - Main portal interface with embedded AI assistant
+- `login.html` - Secure agent authentication page
+- `styles.css` - Professional styling for the agent portal
+- `login-styles.css` - Login page styling
+- `auth.js` - Authentication logic
 - `README.md` - This documentation file
 
 ## Running the Application
@@ -38,16 +47,16 @@ The chat widget is configured with the following parameters:
 ### Option 1: Python HTTP Server
 
 ```bash
-cd HWBDemo
-python3 -m http.server 8000
+cd ALDOTDemo
+python3 -m http.server 8080
 ```
 
-Then open your browser to `http://localhost:8000`
+Then open your browser to `http://localhost:8080`
 
 ### Option 2: Node.js HTTP Server
 
 ```bash
-cd HWBDemo
+cd SFBLDemo
 npx http-server -p 8000
 ```
 
@@ -58,6 +67,30 @@ Then open your browser to `http://localhost:8000`
 1. Install the "Live Server" extension in VS Code
 2. Right-click on `index.html`
 3. Select "Open with Live Server"
+
+## Authentication
+
+The portal uses session-based authentication. Demo credentials are provided on the login page for testing purposes.
+
+**Note**: In production, implement proper authentication with your organization's identity provider.
+
+## Use Cases
+
+### During Client Consultations
+
+Agents can use the AI assistant to:
+- Quickly verify policy details while on the phone with clients
+- Check underwriting requirements for specific health conditions
+- Calculate premium estimates with various coverage options
+- Confirm compliance requirements for specific situations
+- Compare product features to recommend the best fit
+
+### Pre-Meeting Preparation
+
+- Review client history and existing policies
+- Research product options for upcoming consultations
+- Verify current guidelines and requirements
+- Access training materials and best practices
 
 ## Customization
 
@@ -81,12 +114,14 @@ window.wxOConfiguration = {
 
 ### Styling
 
-All styles are contained in `styles.css`. Key color variables:
+All styles are contained in `styles.css` and `login-styles.css`. Key color scheme:
 
-- Primary Blue: `#1e3c72` to `#2a5298` (gradient)
-- Purple Gradient: `#667eea` to `#764ba2`
-- Background: `#f5f7fa`
-- Footer: `#2c3e50`
+- **Primary Blue**: `#0d4f8b` to `#1a6fb0` (gradient)
+- **Background**: `#f8f9fa`
+- **Footer**: `#1a3a52`
+- **Text**: `#333`
+
+The color palette is designed to convey trust, professionalism, and stability - key attributes for life insurance services.
 
 ## Browser Compatibility
 
@@ -97,15 +132,22 @@ All styles are contained in `styles.css`. Key color variables:
 
 ## Security Notes
 
-- This is a demo application
-- In production, implement proper authentication
+- This is a demonstration application
+- In production, implement proper authentication and authorization
 - Use HTTPS for all connections
-- Follow your organization's security policies
+- Follow your organization's security and compliance policies
+- Ensure all client data is handled according to privacy regulations (HIPAA, etc.)
 
 ## Support
 
 For technical issues with the IBM watsonx Orchestrate integration, refer to the [IBM watsonx Orchestrate documentation](https://www.ibm.com/docs/en/watsonx/watson-orchestrate).
 
+For agent support or training questions, contact your SFBL Agent Support Services team.
+
 ## License
 
-This is a demonstration project for internal use.
+This is a demonstration project for internal use by SFBL life insurance agents.
+
+---
+
+**Made with Bob** - AI-Powered Development Assistant

@@ -3,37 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Employee Portal - Login</title>
+    <title>CAMMS - Login</title>
     <link rel="stylesheet" href="login-styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <div class="logo">
-                <h1>🏦 Bank Employee Portal</h1>
+    <div class="login-page">
+
+        <!-- Top branding bar -->
+        <div class="login-top-bar">
+            <span class="login-camms-logo">CAMMS</span>
+            <span class="login-camms-subtitle">Construction and Materials Management System</span>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-container">
+            <div class="login-box">
+                <div class="logo">
+                    <div class="aldot-badge">ALDOT</div>
+                    <h1>CAMMS Assistant Portal</h1>
+                    <p class="org-name">Alabama Department of Transportation</p>
+                </div>
+                <h2>Sign In</h2>
+                <p class="subtitle">Enter your ALDOT network credentials to continue</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required autocomplete="username" placeholder="Network ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Password">
+                    </div>
+
+                    <div id="errorMessage" class="error-message"></div>
+
+                    <button type="submit" class="login-btn">Sign In</button>
+                </form>
+
+                <div class="login-footer-note">
+                    For access issues, contact ALDOT IT Help Desk
+                </div>
             </div>
-            <h2>Sign In</h2>
-            <p class="subtitle">Access your employee dashboard</p>
-            
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required autocomplete="username">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required autocomplete="current-password">
-                </div>
-                
-                <div id="errorMessage" class="error-message"></div>
-                
-                <button type="submit" class="login-btn">Sign In</button>
-            </form>
-            
+        </div>
+
+        <!-- Bottom footer bar -->
+        <div class="login-bottom-bar">
+            <a href="#">Construction Manual</a>
+            <a href="#">Spec Book</a>
+            <a href="#">Testing Manual</a>
+            <a href="#">Help</a>
         </div>
     </div>
-    
+
     <script src="auth.js"></script>
 </body>
 </html>

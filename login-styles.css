@@ -6,84 +6,158 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #e8e8e8;
     min-height: 100vh;
+}
+
+/* Full page layout */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =====================
+   TOP BRANDING BAR
+   ===================== */
+.login-top-bar {
+    background-color: #3a3a3a;
+    color: white;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 1.5rem;
+    min-height: 52px;
+}
+
+.login-camms-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+}
+
+.login-camms-subtitle {
+    font-size: 0.85rem;
+    color: #ccc;
+    border-left: 1px solid #666;
+    padding-left: 1rem;
+}
+
+/* =====================
+   LOGIN CONTAINER
+   ===================== */
+.login-container {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-}
-
-.login-container {
-    width: 100%;
-    max-width: 450px;
+    padding: 2rem;
 }
 
 .login-box {
     background: white;
-    border-radius: 15px;
-    padding: 3rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ccc;
+    border-top: 4px solid #1a5fa8;
+    border-radius: 4px;
+    padding: 2.5rem 3rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Logo / Branding */
 .logo {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.aldot-badge {
+    display: inline-block;
+    background: #1a5fa8;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
 }
 
 .logo h1 {
-    color: #1e3c72;
-    font-size: 1.8rem;
+    color: #1a5fa8;
+    font-size: 1.4rem;
     font-weight: 600;
+    margin-bottom: 0.25rem;
 }
 
+.org-name {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Form headings */
 h2 {
-    color: #1e3c72;
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
 }
 
 .subtitle {
-    color: #666;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
+    color: #777;
+    font-size: 0.82rem;
+    margin-bottom: 1.5rem;
 }
 
+/* Form fields */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
+    margin-bottom: 0.35rem;
+    color: #444;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 0.875rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #1a5fa8;
+    box-shadow: 0 0 0 2px rgba(26, 95, 168, 0.15);
+    background: white;
 }
 
+input::placeholder {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Error message */
 .error-message {
-    color: #d32f2f;
-    background: #ffebee;
-    padding: 0.75rem;
-    border-radius: 6px;
+    color: #c0392b;
+    background: #fdf0ef;
+    border: 1px solid #f5c6c2;
+    padding: 0.6rem 0.75rem;
+    border-radius: 3px;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     display: none;
 }
 
@@ -91,69 +165,79 @@ input[type="password"]:focus {
     display: block;
 }
 
+/* Login button */
 .login-btn {
     width: 100%;
-    padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0.7rem;
+    background: #1a5fa8;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
 }
 
 .login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    background: #1450a0;
+    box-shadow: 0 2px 8px rgba(26, 95, 168, 0.35);
 }
 
 .login-btn:active {
-    transform: translateY(0);
+    background: #0f3d80;
 }
 
-.demo-credentials {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: #f5f7fa;
-    border-radius: 8px;
-    border-left: 4px solid #667eea;
+/* Footer note */
+.login-footer-note {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
 }
 
-.demo-credentials p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: #555;
+/* =====================
+   BOTTOM FOOTER BAR
+   ===================== */
+.login-bottom-bar {
+    background-color: #e0e0e0;
+    border-top: 1px solid #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0.6rem 1.5rem;
+    min-height: 36px;
 }
 
-.demo-credentials p:first-child {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.75rem;
+.login-bottom-bar a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
 }
 
-.demo-credentials code {
-    background: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    color: #667eea;
-    font-weight: 600;
+.login-bottom-bar a:hover {
+    color: #1a5fa8;
+    text-decoration: underline;
 }
 
-/* Responsive Design */
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 480px) {
     .login-box {
         padding: 2rem 1.5rem;
     }
 
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 

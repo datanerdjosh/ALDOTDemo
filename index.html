@@ -3,82 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hancock Whitney Employee Portal</title>
+    <title>CAMMS - Construction and Materials Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>🏦 Hancock Whitney Employee Portal</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#dashboard">Dashboard</a></li>
-                    <li><a href="#customers">Customers</a></li>
-                    <li><a href="#reports">Reports</a></li>
-                    <li><a href="#help">Help</a></li>
-                    <li><span id="userDisplay" class="user-display"></span></li>
-                    <li><button onclick="logout()" class="logout-btn">Logout</button></li>
-                </ul>
-            </nav>
+
+    <!-- Top Header Bar (dark gray) -->
+    <div class="top-header">
+        <div class="top-header-left">
+            <span class="camms-logo">CAMMS</span>
+            <span class="camms-subtitle">Construction and Materials Management System</span>
         </div>
-    </header>
+        <div class="top-header-right">
+            <div class="user-info">
+                <div class="user-date" id="currentDate"></div>
+                <div class="user-name" id="userDisplay">Smith, Laura A. | Contracts Section, Office Engineer</div>
+                <a href="#" class="change-office">Change Office</a>
+            </div>
+        </div>
+    </div>
 
-    <main>
-        <div class="container">
-            <section class="welcome-section">
-                <h2>Welcome to Your Employee Portal</h2>
-                <p>This website is for demo purposes only. Please click the chat in the bottom right corner to ask questions about policies and guidelines.</p>
-            </section>
+    <!-- Blue Navigation Bar -->
+    <div class="blue-nav">
+        <div class="blue-nav-left">
+            <span class="sysadmin-label">SysAdmin</span>
+        </div>
+        <div class="blue-nav-right">
+            <a href="#" class="nav-tab active">Worker</a>
+            <a href="#" class="nav-tab">Search</a>
+            <a href="#" class="nav-tab">Facility</a>
+            <a href="#" class="nav-tab">Vendor</a>
+            <a href="#" class="nav-tab">Worker Merge</a>
+            <a href="#" class="nav-tab">More</a>
+            <button onclick="logout()" class="logout-btn-nav">Logout</button>
+        </div>
+    </div>
 
-            <section class="quick-actions">
-                <h3>Quick Actions</h3>
-                <div class="action-grid">
-                    <div class="action-card">
-                        <div class="icon">👤</div>
-                        <h4>Customer Lookup</h4>
-                        <p>Search and view customer accounts</p>
-                    </div>
-                    <div class="action-card">
-                        <div class="icon">💳</div>
-                        <h4>Account Services</h4>
-                        <p>Manage accounts and transactions</p>
-                    </div>
-                    <div class="action-card">
-                        <div class="icon">📊</div>
-                        <h4>Reports</h4>
-                        <p>Generate and view reports</p>
-                    </div>
-                    <div class="action-card">
-                        <div class="icon">🔒</div>
-                        <h4>Security</h4>
-                        <p>Fraud detection and alerts</p>
+    <!-- Main Layout: Sidebar + Content -->
+    <div class="main-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="sidebar-back">&#9664; Back to Worker Summary</a>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active">
+                    <span class="sidebar-arrow">&#9658;</span>
+                    <a href="#">Demographics</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#">Additional Info</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#">Certifications</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#">Legacy User IDs/Tech IDs</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#">Subordinates</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#">Worker Assignments</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <h2 class="page-title">CAMMS Assistant</h2>
+            <p class="page-subtitle">
+                Welcome to the CAMMS AI Assistant Portal. Use the assistant below to get help navigating the 
+                Construction and Materials Management System, look up worker records, certifications, vendor 
+                information, and more.
+            </p>
+
+            <!-- Info Cards -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-icon">👷</div>
+                    <div class="info-card-body">
+                        <h4>Worker Management</h4>
+                        <p>Look up demographics, certifications, assignments, and subordinate records</p>
                     </div>
                 </div>
-            </section>
+                <div class="info-card">
+                    <div class="info-card-icon">🏗️</div>
+                    <div class="info-card-body">
+                        <h4>Facility & Vendor</h4>
+                        <p>Search facility locations, vendor profiles, and contract information</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">📋</div>
+                    <div class="info-card-body">
+                        <h4>Certifications</h4>
+                        <p>Review worker certifications, expiration dates, and compliance status</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🔍</div>
+                    <div class="info-card-body">
+                        <h4>System Search</h4>
+                        <p>Search across all CAMMS modules including workers, vendors, and facilities</p>
+                    </div>
+                </div>
+            </div>
 
-            <section class="assistant-info">
-                <h3>Need Help?</h3>
-                <p>Click the chat icon in the bottom right corner to speak with our AI assistant. Get instant help with:</p>
-                <ul>
-                    <li>Policy Documents</li>
-                    <li>Guideline Documents</li>
-                </ul>
-            </section>
-        </div>
-    </main>
+            <!-- Assistant Prompt Section -->
+            <div class="assistant-banner">
+                <strong>AI Assistant Active</strong> — Ask the CAMMS Assistant in the bottom right corner for help with any CAMMS task, record lookup, or system navigation question.
+            </div>
+        </main>
+    </div>
 
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Bank Employee Portal. All rights reserved.</p>
-            <p>For technical support, contact IT Help Desk</p>
-        </div>
+    <!-- Bottom Footer Bar -->
+    <footer class="bottom-footer">
+        <a href="#">Construction Manual</a>
+        <a href="#">Spec Book</a>
+        <a href="#">Testing Manual</a>
+        <a href="#">🔍 Search</a>
+        <a href="#">Help</a>
     </footer>
 
     <!-- IBM watsonx Orchestrate Chat Widget -->
     <div id="root"></div>
-    
+
     <!-- Authentication Script -->
     <script src="auth.js"></script>
     <script>
@@ -86,61 +135,46 @@
       if (!checkAuth()) {
         window.location.href = 'login.html';
       }
-      
+
       // Display logged-in user
       const username = sessionStorage.getItem('username');
       if (username) {
-        document.getElementById('userDisplay').textContent = `Welcome, ${username}`;
+        document.getElementById('userDisplay').textContent = `${username} | ALDOT, CAMMS User`;
       }
+
+      // Set current date
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
     </script>
-    
+
     <script>
-      // Event handlers for chat customization
-      function onChatLoad(instance) {
-        console.log('Chat loaded successfully');
-        
-        // Handle authentication token refresh when needed
-        instance.on('authTokenNeeded', async function(event) {
-          console.log('Auth token needed, refreshing...');
-          // In production, you would fetch a new JWT from your server here
-          // For now, we'll use the API key directly
-          event.authToken = 'vhNgmhcjb_l2RVDq21Oc5YklR5UnknqqTLTtj8nGH4Om';
-        });
-        
-        instance.on('chat:ready', function(event) {
-          console.log('Chat is ready for user interaction');
-        });
-      }
-      
-      // Configure IBM watsonx Orchestrate
       window.wxOConfiguration = {
-        orchestrationID: "1d334f6f5c4a402389b1001f50d6565d_47c38f8e-44f5-4baf-a53e-3034947b68eb",
+        orchestrationID: "fa659bb7d5db4aa08644b6101baf15ca_46263361-8967-4fa5-aa6e-21ac5518ca40",
         hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
         rootElementID: "root",
         showLauncher: false,  // Hide the launcher button
         openChatByDefault: true,  // Open chat window automatically
         deploymentPlatform: "ibmcloud",
-        crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/1d334f6f5c4a402389b1001f50d6565d:47c38f8e-44f5-4baf-a53e-3034947b68eb::",
+        crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/fa659bb7d5db4aa08644b6101baf15ca:46263361-8967-4fa5-aa6e-21ac5518ca40::",
         chatOptions: {
-            agentId: "9f708ab0-4b49-4d2e-bfbb-eb3b4a79520a",
-            agentEnvironmentId: "9aaf2025-519f-47b4-b2a9-1fd4fb14f477",
-            onLoad: onChatLoad
+            agentId: "f9a83ac1-6e2e-4582-90de-c2eda44fb341", 
+            agentEnvironmentId: "0fba6fc2-104e-45cf-8785-bfa0c2cd3023",
         },
         layout: {
-            form: 'float',  // Floating chat window
-            width: '800px',  // Increased from 400px for better readability
-            height: '700px', // Increased from 600px for more content
+            form: 'float',
+            width: '1000px',
+            height: '700px',
             showOrchestrateHeader: true,
-            isOpen: true  // Ensure chat opens by default
+            isOpen: true
         },
         style: {
-            headerColor: '#1e3c72',
-            userMessageBackgroundColor: '#2a5298',
-            primaryColor: '#667eea',
+            headerColor: '#1a5fa8',
+            userMessageBackgroundColor: '#2a6fc0',
+            primaryColor: '#1a5fa8',
             showBackgroundGradient: true
         }
       };
-      
       setTimeout(function () {
         const script = document.createElement('script');
         script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
